@@ -9,6 +9,12 @@ const lightThemeOptions: ThemeOptions = {
       // default: orange[800],
       default: "#1F1D2B",
     },
+    primary: {
+      main: "#1F1D2B",
+    },
+    secondary: {
+      main: "#1F1D2B",
+    },
   },
 };
 

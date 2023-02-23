@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef } from "react";
 import cx from "classnames";
 import { Button } from "@mui/material";
+import { orange } from "@mui/material/colors";
 interface IMainButtonProps {
   message?: string;
   handleEvent?: React.MouseEventHandler<HTMLButtonElement>;
@@ -17,9 +18,10 @@ const MainButton = forwardRef<
   return (
     <Button
       ref={ref}
-      className={cx(className, "w-full ")}
+      className={cx(className, "w-full py-3 ")}
       variant={variant}
       onClick={handleEvent}
+      color={"warning"}
     >
       {children}
     </Button>

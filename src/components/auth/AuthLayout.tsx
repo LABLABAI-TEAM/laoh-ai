@@ -22,10 +22,15 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
         >
           <Box
             width={"500px"}
-            p={20}
-            bgcolor="black"
+            p={10}
+            bgcolor="ButtonHighlight"
             borderRadius={"20px"}
-          ></Box>
+          >
+            <Typography textAlign={"center"} className="text__element text-2xl">
+              Recipes By AI
+            </Typography>
+            {children}
+          </Box>
         </Box>
       </Container>
     </>

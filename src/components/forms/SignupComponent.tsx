@@ -6,16 +6,18 @@ import { Grid, GridWrap } from "@mui/material";
 import AppFormField from "./FormField";
 import { useFormik } from "formik";
 
-const FormComponent = () => {
+const RegisterFormComponent = () => {
   const ValidationSchema = Yup.object().shape({
-    username: Yup.string().required().label("Username").min(1),
-    password: Yup.string().required().label("Email").email(),
+    username: Yup.string().required().label("Username").min(5),
+    password: Yup.string().required().label("Password").min(4),
+    email: Yup.string().required().label("Email").email(),
   });
   const { initialValues, handleSubmit, setSubmitting, isSubmitting } =
     useFormik({
       initialValues: {
         usernames: "",
         password: "",
+        email: "",
       },
       onSubmit: () => {},
     });
@@ -36,7 +38,10 @@ const FormComponent = () => {
               <AppFormField placeholder="Your User Name" name="usernames" />
             </Grid>
             <Grid item xs={12}>
-              <AppFormField placeholder="Your EmailAddress" name="password" />
+              <AppFormField placeholder="Your EmailAddress" name="email" />
+            </Grid>
+            <Grid item xs={12}>
+              <AppFormField placeholder="Your Password" name="password" />
             </Grid>
             <LoadingButton
               loading={isSubmitting}
@@ -52,4 +57,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default RegisterFormComponent;

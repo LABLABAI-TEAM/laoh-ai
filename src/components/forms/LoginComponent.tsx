@@ -10,8 +10,8 @@ import { SubmitButton } from "@/hooks";
 
 const FormComponent = () => {
   const ValidationSchema = Yup.object().shape({
-    username: Yup.string().required().label("Username").min(1),
-    password: Yup.string().required().label("Email").email(),
+    usernames: Yup.string().required().label("Username").min(1),
+    password: Yup.string().required().label("Password").min(10),
   });
   const { initialValues, handleSubmit, setSubmitting, isSubmitting } =
     useFormik({
@@ -38,18 +38,17 @@ const FormComponent = () => {
               <AppFormField placeholder="Your User Name" name="usernames" />
             </Grid>
             <Grid item xs={12}>
-              <AppFormField placeholder="Your EmailAddress" name="password" />
+              <AppFormField placeholder="Your Password" name="password" />
             </Grid>
             <Grid item xs={12}>
               <SubmitButton
                 isSubmitting={isSubmitting}
                 variant="contained"
-                className="w-full  p-4 rounded-xl"
+                type="submit"
               >
                 Submit
               </SubmitButton>
             </Grid>
-            {/* <MainButton>CLICK</MainButton> */}
           </Grid>
         </form>
       </AppForm>

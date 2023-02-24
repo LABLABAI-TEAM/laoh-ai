@@ -8,6 +8,7 @@ interface IMainButtonProps {
   handleEvent?: React.MouseEventHandler<HTMLButtonElement>;
   variant?: "text" | "contained" | "outlined";
   isSubmitting?: boolean;
+  // color: "info" | " success" | "danger" | "warning" | "error" | "secondary";
 }
 
 const SubmitButton = forwardRef<
@@ -25,18 +26,26 @@ const SubmitButton = forwardRef<
       handleEvent,
       variant,
       isSubmitting,
+      type,
       ...props
     },
     ref
   ) => {
     return (
       <LoadingButton
+        // @ts-ignore
         ref={ref}
-        className={cx(className, "w-full py-3 ")}
+        className={cx(
+          className,
+          "w-full py-3 ",
+          !isSubmitting && "cursor-not-allowed"
+        )}
         variant={variant}
         onClick={handleEvent}
-        color={"success"}
         loading={isSubmitting}
+        color="success"
+        type={type}
+        // {...props}
       >
         {children}
       </LoadingButton>

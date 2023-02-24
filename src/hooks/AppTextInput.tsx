@@ -11,6 +11,8 @@ interface IMainButtonProps {
   handleEvent?: React.MouseEventHandler<HTMLInputElement>;
   variant?: "standard" | "filled" | "outlined";
   onChange?: React.FormEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  error?: boolean;
+  helperText?: string;
 }
 
 const AppTextInput = forwardRef<
@@ -30,21 +32,28 @@ const AppTextInput = forwardRef<
       onChange,
       placeholder,
       name,
+      error,
+      helperText,
       ...props
     },
     ref
   ) => {
     return (
       <TextField
+        // @ts-ignore
         ref={ref}
         className={cx(className, "w-full py-3 border-re ")}
         variant={variant}
         onClick={handleEvent}
+        // @ts-ignore
         color={"warning"}
         fullWidth
         onChange={onChange}
         placeholder={placeholder}
         name={name}
+        error={error}
+        helperText={helperText}
+        {...props}
       />
     );
   }

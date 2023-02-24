@@ -6,26 +6,30 @@ import { Grid, GridWrap } from "@mui/material";
 import AppFormField from "./FormField";
 import { useFormik } from "formik";
 import { SubmitButton } from "@/hooks";
+import cx from "classnames";
+import { UserSignup } from "@/types/types";
 
 const RegisterFormComponent = () => {
   const ValidationSchema = Yup.object().shape({
-    username: Yup.string().required().label("Username").min(5),
+    usernames: Yup.string().required().label("Username").min(5),
     password: Yup.string().required().label("Password").min(4),
     email: Yup.string().required().label("Email").email(),
   });
-  const { initialValues, handleSubmit, setSubmitting, isSubmitting } =
-    useFormik({
+  const { initialValues, handleSubmit, isSubmitting, submitForm } =
+    useFormik<UserSignup>({
       initialValues: {
         usernames: "",
         password: "",
         email: "",
       },
-      onSubmit: () => {},
+      onSubmit: ({ email }) => {
+        console.log(email);
+      },
     });
   return (
     <>
       <AppForm
-        onSubmit={() => {}}
+        onSubmit={submitForm}
         ValidationSchema={ValidationSchema}
         initialValues={initialValues}
       >
@@ -48,7 +52,7 @@ const RegisterFormComponent = () => {
               <SubmitButton
                 isSubmitting={isSubmitting}
                 variant="contained"
-                className="w-full"
+                type="submit"
               >
                 Submit
               </SubmitButton>

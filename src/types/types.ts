@@ -1,3 +1,9 @@
+import { FormikErrors, FormikTouched } from "formik";
+
+type UserSignup = { usernames: string; email: string; password: string };
+
+type UserLogin = { username: string; password: string };
+
 type ComponentsBaseProps = React.FC<{
   children?: React.ReactNode;
   ValidationSchema?: {};
@@ -12,8 +18,8 @@ type ComponentsBaseProps = React.FC<{
       ? void
       : (e: string | React.ChangeEvent<any>) => void;
   };
-  errors?: {}[];
-  touched?: {}[];
+  errors?: FormikErrors<UserSignup>;
+  touched?: FormikTouched<UserSignup>;
   placeholder?: string;
   handleBlur?: {
     (e: React.FocusEvent<any>): void;
@@ -22,6 +28,8 @@ type ComponentsBaseProps = React.FC<{
   error?: string;
   visible?: boolean;
   name?: string;
+  helperText?: string;
+  disabled?: boolean;
 }>;
 
 interface AuthLayoutProps {
@@ -33,4 +41,4 @@ interface AuthLayoutProps {
   };
 }
 
-export type { ComponentsBaseProps, AuthLayoutProps };
+export type { ComponentsBaseProps, AuthLayoutProps, UserLogin, UserSignup };

@@ -8,7 +8,8 @@ const lightThemeOptions: ThemeOptions = {
   palette: {
     mode: "dark",
     background: {
-      default: "#1F1D2B",
+      // default: "#1F1D2B",
+      default: "#252836",
       paper: "#000",
     },
     primary: {

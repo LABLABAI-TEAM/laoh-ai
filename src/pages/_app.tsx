@@ -8,6 +8,17 @@ import * as React from "react";
 import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
+import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
+// `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
+import chakraTheme from "@chakra-ui/theme";
+
+const { Button } = chakraTheme.components;
+
+const theme = extendBaseTheme({
+  components: {
+    Button,
+  },
+});
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -33,7 +44,9 @@ const App: React.FunctionComponent<MyAppProps> = ({
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />
+        {/* <ChakraBaseProvider theme={theme}> */}
         <Component {...pageProps} />
+        {/* </ChakraBaseProvider> */}
       </ThemeProvider>
     </CacheProvider>
   );

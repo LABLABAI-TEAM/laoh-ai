@@ -22,7 +22,15 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
           height={"100vh"}
           alignContent="center"
         >
-          <Box width={"500px"} p={10} borderRadius={"20px"} bgcolor="slategray">
+          <img src="/vector4.png" className="vector__three__img" />
+          <img src="/vector3.png" className="vector__three__img" />
+          <Box
+            width={"500px"}
+            p={10}
+            borderRadius={"20px"}
+            bgcolor="slategray"
+            zIndex={"999"}
+          >
             <Typography textAlign={"center"} className="text__element text-2xl">
               Recipes By AI
             </Typography>

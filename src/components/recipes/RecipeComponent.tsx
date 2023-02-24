@@ -1,4 +1,5 @@
 import React from "react";
+import FullWidthTab from "../tabspanel/TabsPanel";
 import Header from "./Header";
 
 const RecipeComponent = () => {
@@ -6,7 +7,7 @@ const RecipeComponent = () => {
     <>
       <div>
         <Header />
-        <h1>Recipe Component</h1>
+        <FullWidthTab />
       </div>
     </>
   );

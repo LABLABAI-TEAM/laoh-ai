@@ -4,7 +4,7 @@ import { useFormikContext } from "formik";
 import React from "react";
 import AppErrorMessage from "./AppErrorMessage";
 
-const AppFormField: ComponentsBaseProps = ({ name }) => {
+const AppFormField: ComponentsBaseProps = ({ name, placeholder }) => {
   const {
     setFieldTouched,
     errors,
@@ -18,6 +18,7 @@ const AppFormField: ComponentsBaseProps = ({ name }) => {
       <AppTextInput
         onChange={handleChange}
         onBlur={() => setFieldTouched(name!)}
+        placeholder={placeholder}
       />
       {/* @ts-ignore */}
       <AppErrorMessage error={errors[name!]} touched={touched[name]} />

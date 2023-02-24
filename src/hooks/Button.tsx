@@ -21,7 +21,7 @@ const MainButton = forwardRef<
       className={cx(className, "w-full py-3 ")}
       variant={variant}
       onClick={handleEvent}
-      color={"warning"}
+      color={"success"}
     >
       {children}
     </Button>

@@ -5,6 +5,7 @@ import { loadingButtonClasses, LoadingButton } from "@mui/lab";
 import { Grid, GridWrap } from "@mui/material";
 import AppFormField from "./FormField";
 import { useFormik } from "formik";
+import { SubmitButton } from "@/hooks";
 
 const RegisterFormComponent = () => {
   const ValidationSchema = Yup.object().shape({
@@ -43,13 +44,15 @@ const RegisterFormComponent = () => {
             <Grid item xs={12}>
               <AppFormField placeholder="Your Password" name="password" />
             </Grid>
-            <LoadingButton
-              loading={isSubmitting}
-              variant="contained"
-              className="w-full"
-            >
-              Submit
-            </LoadingButton>
+            <Grid item xs={12}>
+              <SubmitButton
+                isSubmitting={isSubmitting}
+                variant="contained"
+                className="w-full"
+              >
+                Submit
+              </SubmitButton>
+            </Grid>
           </Grid>
         </form>
       </AppForm>

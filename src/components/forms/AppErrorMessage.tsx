@@ -6,7 +6,7 @@ const AppErrorMessage: ComponentsBaseProps = ({ error, visible }) => {
   if (!error || !visible) return null;
   return (
     <>
-      <Typography>{error} </Typography>
+      <Typography component="p">{error}</Typography>
     </>
   );
 };

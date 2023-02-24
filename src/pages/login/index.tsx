@@ -5,7 +5,12 @@ import React from "react";
 const Login = () => {
   return (
     <>
-      <AuthLayout>
+      <AuthLayout
+        redirect={{
+          desc: "Don't have an account?.",
+          pathname: { link: "/signup", text: "  Register here" },
+        }}
+      >
         <LoginCP />
       </AuthLayout>
     </>

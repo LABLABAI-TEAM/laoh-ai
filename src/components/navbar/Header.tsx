@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" className="top-0">
       <Container maxWidth="xl">
         <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
           <Link href="/">

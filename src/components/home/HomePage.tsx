@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MainButton from "@/hooks/Button";
 import cx from "classnames";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
   const [windowSize, setWindowSize] = useState({
@@ -35,6 +36,8 @@ const HomePage = () => {
     // @ts-ignore
     setTopSize(windowSize.height);
   }, [windowSize]);
+
+  const router = useRouter();
   return (
     <>
       <Container
@@ -71,7 +74,12 @@ const HomePage = () => {
                   empowering people to create amazing meals at home.
                 </Typography>
                 <Box maxWidth={"50%"}>
-                  <MainButton variant="outlined">Try Now</MainButton>
+                  <MainButton
+                    variant="outlined"
+                    handleEvent={() => router.push("/login")}
+                  >
+                    Try Now
+                  </MainButton>
                 </Box>
               </div>
             </Box>

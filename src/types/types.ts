@@ -28,7 +28,7 @@ interface AuthLayoutProps {
   children?: React.ReactNode;
   title?: string;
   redirect?: {
-    pathname: string;
+    pathname: { text: string; link: string };
     desc: string;
   };
 }

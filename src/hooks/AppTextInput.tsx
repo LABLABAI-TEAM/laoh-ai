@@ -21,18 +21,30 @@ const AppTextInput = forwardRef<
   >
 >(
   (
-    { children, className, message, handleEvent, variant, onChange, ...props },
+    {
+      children,
+      className,
+      message,
+      handleEvent,
+      variant,
+      onChange,
+      placeholder,
+      name,
+      ...props
+    },
     ref
   ) => {
     return (
       <TextField
         ref={ref}
-        className={cx(className, "w-full py-3 ")}
+        className={cx(className, "w-full py-3 border-re ")}
         variant={variant}
         onClick={handleEvent}
         color={"warning"}
         fullWidth
         onChange={onChange}
+        placeholder={placeholder}
+        name={name}
       />
     );
   }

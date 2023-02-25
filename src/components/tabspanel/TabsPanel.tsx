@@ -1,15 +1,25 @@
 import React from "react";
 import {} from "@mui/lab";
 import { AppBar, Tabs, Tab, Typography, Box } from "@mui/material";
-import useTheme from "@mui/material/styles/useTheme";
 import SwipeableViews from "react-swipeable-views";
-import styled from "@mui/material/styles/styled";
+import { styled, useTheme } from "@mui/material/styles";
+import RecipeCollections from "../recipes/recipecollections/RecipeCollections";
 
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
   value?: number;
   index?: number;
+}
+
+interface StyledTabsProps {
+  children?: React.ReactNode;
+  value: number;
+  onChange?(event: React.SyntheticEvent, newValue: number): void;
+}
+
+interface StylesTabProps {
+  label: string;
 }
 const TabPanel: React.FC<TabPanelProps> = ({
   children,
@@ -39,12 +49,6 @@ function a11yProps(index: number) {
     "aria-controls": `full-width-tabpanel-${index}`,
   };
 }
-interface StyledTabsProps {
-  children?: React.ReactNode;
-  value: number;
-  onChange?(event: React.SyntheticEvent, newValue: number): void;
-}
-
 const StyledTabs = styled((props: StyledTabsProps) => (
   <Tabs
     {...props}
@@ -64,9 +68,6 @@ const StyledTabs = styled((props: StyledTabsProps) => (
   },
 });
 
-interface StylesTabProps {
-  label: string;
-}
 const StyledTab = styled((props: StylesTabProps) => (
   <Tab {...props} disableRipple />
 ))(({ theme }) => ({
@@ -79,7 +80,7 @@ const StyledTab = styled((props: StylesTabProps) => (
   },
 }));
 
-export default function FullWidthTab() {
+const FullWidthTab = () => {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -109,7 +110,9 @@ export default function FullWidthTab() {
         className="w-full"
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+          <>
+            <RecipeCollections />
+          </>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
@@ -120,4 +123,5 @@ export default function FullWidthTab() {
       </SwipeableViews>
     </Box>
   );
-}
+};
+export default FullWidthTab;

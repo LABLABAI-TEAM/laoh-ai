@@ -91,8 +91,8 @@ const FullWidthTab = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "background.paper", width: "100%" }}>
-      <AppBar position="static">
+    <Box sx={{ bgcolor: "transparent", width: "100%" }}>
+      <AppBar position="static" color="transparent" className="border">
         <StyledTabs
           value={value}
           onChange={handleChange}

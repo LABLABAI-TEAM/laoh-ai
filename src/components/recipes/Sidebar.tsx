@@ -2,6 +2,7 @@ import { Container, Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import IconItem from "../customs/IconItem";
+import { Home, SettingsAccessibility, EditRounded } from "@mui/icons-material";
 
 const SidebarLayout = () => {
   return (
@@ -16,7 +17,7 @@ const SidebarLayout = () => {
         paddingBottom={"300px"}
         height="100%"
       >
-        <Box width="100px" height="100px" bgcolor={"white"}>
+        <Box width="150px" height="100px">
           <img src="/logo.png" className="w-full h-full" />
         </Box>
         <Box
@@ -25,9 +26,15 @@ const SidebarLayout = () => {
           justifyContent={"center"}
           mt="20px"
         >
-          <IconItem />
-          <IconItem />
-          <IconItem />
+          <IconItem>
+            <Home />
+          </IconItem>
+          <IconItem>
+            <SettingsAccessibility />
+          </IconItem>
+          <IconItem>
+            <EditRounded />
+          </IconItem>
         </Box>
       </Box>
     </>

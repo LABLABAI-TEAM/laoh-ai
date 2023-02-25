@@ -41,4 +41,26 @@ interface AuthLayoutProps {
   };
 }
 
-export type { ComponentsBaseProps, AuthLayoutProps, UserLogin, UserSignup };
+interface RecipeElement {
+  image: string;
+  title: string;
+  description?: string;
+  timeFrame?: string;
+  ingredients?: string;
+  directions?: string;
+  link?: string;
+  id?: string;
+  type?: string;
+  active?: boolean;
+  disabled?: boolean;
+  children?: React.ReactNode;
+  price?: number;
+}
+
+export type {
+  ComponentsBaseProps,
+  AuthLayoutProps,
+  UserLogin,
+  UserSignup,
+  RecipeElement,
+};

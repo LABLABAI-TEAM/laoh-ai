@@ -54,8 +54,8 @@ const RecipesHeader = () => {
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-          Recipes
+        <Typography sx={{ fontWeight: "medium", fontSize: "1.2rem" }}>
+          What Do you want to eat today?
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>

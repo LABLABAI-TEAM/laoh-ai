@@ -67,7 +67,7 @@ const RecipesHeader = () => {
             displayEmpty
             renderValue={(selected) => {
               if (selected.length === 0) {
-                return <em>placeholder</em>;
+                return <em>Trending</em>;
               }
               return selected.join(", ");
             }}

@@ -9,11 +9,12 @@ const RecipeLayout: ComponentsBaseProps = ({ children }) => {
     <>
       <div className="layout__column border">
         <div className="flex space-x-20">
-          <div className="max-w-[5%] w-full">
+          <div className="max-w-[5%] w-full left-0 sticky -pt-20">
             <SidebarLayout />
           </div>
           <div className="max-w-[95%] w-full">
             <RecipeComponent />
+            {children}
           </div>
         </div>
       </div>

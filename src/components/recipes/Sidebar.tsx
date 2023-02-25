@@ -1,10 +1,24 @@
-import { Container, Box } from "@mui/material";
+import {
+  Container,
+  Box,
+  Button,
+  ButtonGroup,
+  ButtonGroupClasses,
+  buttonGroupClasses,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import IconItem from "../customs/IconItem";
-import { Home, SettingsAccessibility, EditRounded } from "@mui/icons-material";
+import {
+  Home,
+  SettingsAccessibility,
+  EditRounded,
+  Settings,
+} from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 const SidebarLayout = () => {
+  const router = useRouter();
   return (
     <>
       <Box
@@ -14,28 +28,22 @@ const SidebarLayout = () => {
         justifyContent="center"
         borderRadius={"20px"}
         alignItems="center"
-        paddingBottom={"300px"}
-        height="100%"
+        pb={"200px"}
       >
-        <Box width="150px" height="100px">
+        <Box width="150px" height="100px" flex="1">
           <img src="/logo.png" className="w-full h-full" />
         </Box>
-        <Box
-          flexDirection={"column"}
-          display="flex"
-          justifyContent={"center"}
-          mt="20px"
-        >
-          <IconItem>
+        <div className="flex-col justify-center pt-10 space-y-20">
+          <IconItem handleRoute={() => router.push("/recipes/collections")}>
             <Home />
           </IconItem>
-          <IconItem>
-            <SettingsAccessibility />
-          </IconItem>
-          <IconItem>
+          <IconItem handleRoute={() => router.push("/recipes/create")}>
             <EditRounded />
           </IconItem>
-        </Box>
+          <IconItem handleRoute={() => router.push("/")}>
+            <Settings />
+          </IconItem>
+        </div>
       </Box>
     </>
   );

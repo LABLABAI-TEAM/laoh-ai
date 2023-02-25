@@ -1,15 +1,22 @@
+import { Iconstyles } from "@/styles/themes/css/app.style";
 import { Box } from "@mui/material";
 import React from "react";
 import { IconType } from "react-icons";
 interface IconItemProps {
   icon: React.ReactNode;
 }
-const IconItem: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const IconItem: React.FC<{
+  children?: React.ReactNode;
+  handleRoute?(): void;
+}> = ({ children, handleRoute }) => {
+  const { Layout, Wrapper } = Iconstyles;
   return (
     <>
-      <Box p="30px" borderRadius={"20px"} bgcolor="gold" mb="100px">
-        {children}
-      </Box>
+      <div className="group w-20 h-20">
+        <Wrapper>
+          <Layout onClick={handleRoute}>{children}</Layout>
+        </Wrapper>
+      </div>
     </>
   );
 };

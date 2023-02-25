@@ -5,5 +5,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-styled-components"),
+    require("tailwindcss-no-scrollbar"),
+    require("@tailwindcss/typography"),
+  ],
 };

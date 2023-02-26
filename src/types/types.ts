@@ -99,7 +99,22 @@ interface TRecipes {
   sortOrder: string | string[];
   setSortOrder: React.Dispatch<React.SetStateAction<string | string[]>>;
 }
+interface TabPanelProps {
+  children?: React.ReactNode;
+  dir?: string;
+  value?: number;
+  index?: number;
+}
 
+interface StyledTabsProps {
+  children?: React.ReactNode;
+  value: number;
+  onChange?(event: React.SyntheticEvent, newValue: number): void;
+}
+
+interface StylesTabProps {
+  label: string;
+}
 export type {
   ComponentsBaseProps,
   AuthLayoutProps,
@@ -109,4 +124,7 @@ export type {
   TGlobal,
   TCategory,
   TRecipes,
+  TabPanelProps,
+  StyledTabsProps,
+  StylesTabProps,
 };

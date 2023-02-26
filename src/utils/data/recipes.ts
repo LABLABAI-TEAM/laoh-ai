@@ -349,4 +349,9 @@ const categories: TCategory[] = [
     name: "Stronger",
   },
 ];
-export { recipesData, categories };
+
+const recipeCreateData = [
+  { id: uuid(), name: "Order" },
+  { id: uuid(), name: "Recipe" },
+];
+export { recipesData, categories, recipeCreateData };

@@ -10,6 +10,9 @@ import {
   FormControl,
 } from "@mui/material";
 import { styled, useTheme, useColorScheme, Theme } from "@mui/material/styles";
+import { TRecipes } from "@/types/types";
+import { string } from "yup";
+import { useRouter } from "next/router";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -42,7 +45,13 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
   };
 }
 
-const RecipesHeader = () => {
+const RecipesHeader: React.FC<TRecipes> = ({
+  handleSort,
+  sortOrder,
+  setSortOrder,
+}) => {
+  const router = useRouter();
+  const { query } = router;
   const theme = useTheme();
   const [filterName, setFilterName] = useState<string[]>([]);
   const handleChange = (event: SelectChangeEvent<typeof filterName>) => {
@@ -50,6 +59,14 @@ const RecipesHeader = () => {
       target: { value },
     } = event;
     setFilterName(typeof value === "string" ? value.split(",") : value);
+    setSortOrder(value);
+    router.push({
+      pathname: "/recipes/collections",
+      query: {
+        sort: event.target.value,
+        ...query,
+      },
+    });
   };
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -62,6 +79,8 @@ const RecipesHeader = () => {
         <FormControl sx={{ width: 300 }}>
           <Select
             value={filterName}
+            // onChange={handleChange}
+            // value={sortOrder as string[]}
             onChange={handleChange}
             multiple
             displayEmpty

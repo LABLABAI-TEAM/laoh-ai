@@ -42,21 +42,45 @@ interface AuthLayoutProps {
     desc: string;
   };
 }
-
+interface TUser {
+  id: string | number;
+  name: string;
+}
 interface RecipeElement {
+  [key: string]:
+    | string
+    | string[]
+    | number
+    | undefined
+    | boolean
+    | React.ReactNode
+    | TUser
+    | Date;
   image: string;
   title: string;
   description?: string;
   timeFrame?: string;
-  ingredients?: string;
+  ingredients?: string | string[];
   directions?: string;
   link?: string;
   id?: string;
   type?: string;
   active?: boolean;
   disabled?: boolean;
-  children?: React.ReactNode;
+  // children?: React.ReactNode;
   price?: number;
+  category?: string;
+  instructions?: string[];
+  likes?: number;
+  dislikes?: number;
+  comments?: number;
+  user?: TUser;
+  createdAt?: Date;
+  updatedAt?: Date;
+  favorite?: boolean;
+  deleted?: boolean;
+  favoriteCount?: number;
+  commentCount?: number;
 }
 
 const GlobalInitialState = z.object({
@@ -65,6 +89,17 @@ const GlobalInitialState = z.object({
 
 type TGlobal = z.infer<typeof GlobalInitialState>;
 
+type TCategory = { id: number | string; name: string };
+
+interface TRecipes {
+  handleSort?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleFilter?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  sortedRecipes?: RecipeElement[];
+  categoryFilter?: string | string[];
+  sortOrder: string | string[];
+  setSortOrder: React.Dispatch<React.SetStateAction<string | string[]>>;
+}
+
 export type {
   ComponentsBaseProps,
   AuthLayoutProps,
@@ -72,4 +107,6 @@ export type {
   UserSignup,
   RecipeElement,
   TGlobal,
+  TCategory,
+  TRecipes,
 };

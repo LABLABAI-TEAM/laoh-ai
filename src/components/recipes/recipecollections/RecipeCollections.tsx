@@ -30,19 +30,17 @@ const RecipeCollections: React.FC<TRecipes> = ({
               sx={{ my: "10rem", pt: "3rem" }}
             >
               {/* {Array.from(Array(24)).map((_, index) => ( */}
-              {Array(36)
-                .fill(0)
-                .map((_, index) => (
+              {sortedRecipes?.map(
+                ({ image, id, title, description, price }, index) => (
                   <RecipeCard
                     key={index}
-                    image="/image.png"
-                    title=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                  quam sunt, nihil qui laborum perferendis."
-                    timeFrame="5-7 mins"
-                    link="/"
-                    price={10}
+                    image={image}
+                    description={description}
+                    title=""
+                    price={price}
                   />
-                ))}
+                )
+              )}
             </Grid>
           </div>
         </RecipeCollectionsLayout>

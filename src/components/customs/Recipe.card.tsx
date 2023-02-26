@@ -10,6 +10,7 @@ const RecipeCard: React.FunctionComponent<RecipeElement> = ({
   image,
   title,
   timeFrame,
+  description,
 }) => {
   return (
     <>
@@ -17,14 +18,15 @@ const RecipeCard: React.FunctionComponent<RecipeElement> = ({
         <Link href={`/${link}`}>
           <div className="w-full flex items-center justify-center rounded-xl flex-col relative bg-[#1F1D2B] py-5 px-2 space-y-8">
             <div className="absolute -top-12 z-[999]">
-              <Image src="/image.png" alt="image" height={150} width={150} />
+              {/* <Image src={image} alt="image" height={150} width={150} /> */}
+              <img src={"/img2.png"} alt="" width={150} height={150} />
             </div>
             <Typography
               variant="h6"
               sx={{ color: "white", fontWeight: "bold" }}
               className="text__element__xs text-center pt-16 max-w-[90%]"
             >
-              {title}
+              {description}
             </Typography>
             <Typography
               variant="h6"

@@ -1,4 +1,5 @@
 import { FormikErrors, FormikTouched } from "formik";
+import { z } from "zod";
 
 type UserSignup = { usernames: string; email: string; password: string };
 
@@ -57,10 +58,17 @@ interface RecipeElement {
   price?: number;
 }
 
+const GlobalInitialState = z.object({
+  onRouteClick: z.boolean(),
+});
+
+type TGlobal = z.infer<typeof GlobalInitialState>;
+
 export type {
   ComponentsBaseProps,
   AuthLayoutProps,
   UserLogin,
   UserSignup,
   RecipeElement,
+  TGlobal,
 };

@@ -11,6 +11,8 @@ import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
 // `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
 import chakraTheme from "@chakra-ui/theme";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 const { Button } = chakraTheme.components;
 
@@ -27,6 +29,8 @@ import "@fontsource/roboto/700.css";
 
 import createEmotionCache from "../utility/createEmotionCache";
 import { lightThemeOptions } from "../styles/themes/lightThemeOptions";
+import { store } from "@/services/app/rootReducer";
+import persistStore from "redux-persist/lib/persistStore";
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
@@ -34,6 +38,8 @@ interface MyAppProps extends AppProps {
 const clientSideEmotionCache = createEmotionCache();
 
 const lightTheme = createTheme(lightThemeOptions);
+
+let persistor = persistStore(store);
 
 const App: React.FunctionComponent<MyAppProps> = ({
   Component,
@@ -45,7 +51,11 @@ const App: React.FunctionComponent<MyAppProps> = ({
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />
         {/* <ChakraBaseProvider theme={theme}> */}
-        <Component {...pageProps} />
+        <Provider store={store}>
+          {/* <PersistGate loading={null} persistor={persistor}> */}
+          <Component {...pageProps} />
+          {/* </PersistGate> */}
+        </Provider>
         {/* </ChakraBaseProvider> */}
       </ThemeProvider>
     </CacheProvider>

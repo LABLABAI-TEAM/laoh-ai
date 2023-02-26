@@ -3,7 +3,9 @@ import {} from "@mui/lab";
 import { AppBar, Tabs, Tab, Typography, Box } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { styled, useTheme } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
 import RecipeCollections from "../recipes/recipecollections/RecipeCollections";
+import { onRouteClickS } from "@/services/features/globalstate/GlobalStateSlice";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -89,6 +91,8 @@ const FullWidthTab = () => {
   const handleChangeIndex = (index: number) => {
     setValue(index);
   };
+  const select = useSelector(onRouteClickS);
+  console.log("selecyt ", select);
 
   return (
     <Box sx={{ bgcolor: "transparent", width: "100%" }}>

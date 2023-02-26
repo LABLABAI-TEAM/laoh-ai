@@ -2,19 +2,26 @@ import { Iconstyles } from "@/styles/themes/css/app.style";
 import { Box } from "@mui/material";
 import React from "react";
 import { IconType } from "react-icons";
+import cx from "classnames";
+import { useRouter } from "next/router";
 interface IconItemProps {
   icon: React.ReactNode;
 }
 const IconItem: React.FC<{
   children?: React.ReactNode;
-  handleRoute?(): void;
-}> = ({ children, handleRoute }) => {
+  handleTabClick: () => void;
+  onRoute?: boolean;
+  route?: string;
+}> = ({ children, handleTabClick, onRoute, route }) => {
   const { Layout, Wrapper } = Iconstyles;
+  const router = useRouter();
   return (
     <>
       <div className="group w-20 h-20">
-        <Wrapper>
-          <Layout onClick={handleRoute}>{children}</Layout>
+        <Wrapper
+          className={cx(router.asPath.includes(route!) ? "bg-[#252836]" : "")}
+        >
+          <Layout onClick={handleTabClick}>{children}</Layout>
         </Wrapper>
       </div>
     </>

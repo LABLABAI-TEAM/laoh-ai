@@ -17,7 +17,12 @@ import {
 } from "@mui/icons-material";
 import { useRouter } from "next/router";
 
-const SidebarLayout = () => {
+type SidebarLayoutType = {
+  onRoute?: boolean;
+  handleTabClick: (route: string) => void;
+};
+
+const SidebarLayout = ({ onRoute, handleTabClick }: SidebarLayoutType) => {
   const router = useRouter();
   return (
     <>
@@ -34,13 +39,20 @@ const SidebarLayout = () => {
           <img src="/logo.png" className="w-full h-full" />
         </Box>
         <div className="flex-col justify-center pt-10 space-y-20">
-          <IconItem handleRoute={() => router.push("/recipes/collections")}>
+          <IconItem
+            handleTabClick={() => handleTabClick("collections")}
+            onRoute={onRoute}
+            route="collections"
+          >
             <Home />
           </IconItem>
-          <IconItem handleRoute={() => router.push("/recipes/create")}>
+          <IconItem
+            handleTabClick={() => handleTabClick("create")}
+            route="create"
+          >
             <EditRounded />
           </IconItem>
-          <IconItem handleRoute={() => router.push("/")}>
+          <IconItem handleTabClick={() => router.push("/")}>
             <Settings />
           </IconItem>
         </div>

@@ -31,6 +31,7 @@ type ComponentsBaseProps = React.FC<{
   name?: string;
   helperText?: string;
   disabled?: boolean;
+  onRouteClick?: boolean;
 }>;
 
 interface AuthLayoutProps {

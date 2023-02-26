@@ -7,7 +7,7 @@ import {
 } from "@reduxjs/toolkit";
 
 const initialState: TGlobal = {
-  onRouteClick: false,
+  onRouteClick: true,
 };
 
 const globalState = createSlice({

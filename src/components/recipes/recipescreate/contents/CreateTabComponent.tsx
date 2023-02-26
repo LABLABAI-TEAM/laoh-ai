@@ -11,6 +11,8 @@ import {
 import { makeStyles, styled, useTheme } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import { recipeCreateData } from "@/utils/data/recipes";
+import RecipesCreateOrder from "./children/recipescreateorder/RecipesCreateOrder";
+import RecipesCreateChoose from "./children/recipescreatechoose/RecipesCreateChoose";
 const TabPanel: React.FC<TabPanelProps> = ({
   children,
   dir,
@@ -117,10 +119,12 @@ const CreateTabComponent = () => {
           className="w-full"
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <></>
+            <>
+              <RecipesCreateOrder />
+            </>
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            Item Two
+            <RecipesCreateChoose />
           </TabPanel>
         </SwipeableViews>
       </Box>

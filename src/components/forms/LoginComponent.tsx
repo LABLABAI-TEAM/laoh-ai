@@ -28,7 +28,7 @@ const FormComponent = () => {
         ValidationSchema={ValidationSchema}
         initialValues={initialValues}
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={"p-"}>
           <Grid
             container
             rowSpacing={{ xs: 2, md: 2 }}

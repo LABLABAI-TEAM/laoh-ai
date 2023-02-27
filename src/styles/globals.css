@@ -54,6 +54,10 @@
   height: 500px;
 }
 
+.checkbox__p {
+  @apply text-sm leading-tight tracking-widest;
+}
+
 .items__column {
   @apply flex-col justify-center;
 }

@@ -85,6 +85,7 @@ interface RecipeElement {
 
 const GlobalInitialState = z.object({
   onRouteClick: z.boolean(),
+  isResponse: z.boolean(),
 });
 
 type TGlobal = z.infer<typeof GlobalInitialState>;

@@ -15,7 +15,7 @@ const formValues = Yup.object({
   people: Yup.bool(),
   peopleNumber: Yup.number().min(
     2,
-    "Number of people to feed should be of minimu 2"
+    "Number of people to feed should be of minimum 2"
   ),
   health: Yup.bool(),
   taste: Yup.bool(),
@@ -47,7 +47,7 @@ const AskingForMealForm = () => {
         initialValues={initialValues}
         ValidationSchema={formValues}
       >
-        <Box sx={{ m: 20 }}>
+        <Box sx={{ m: 15 }}>
           <form>
             <Grid
               container
@@ -84,6 +84,12 @@ const AskingForMealForm = () => {
                   label="People to Feed"
                 />
               </Grid>
+              <Grid item xs={12} sm={4} md={6} lg={4}>
+                <AppFormField
+                  name="peopleNumber"
+                  placeholder="People's Number"
+                />
+              </Grid>
             </Grid>
             {/*  */}
             <Grid
@@ -96,32 +102,38 @@ const AskingForMealForm = () => {
             >
               <Grid item xs={4}>
                 <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
+                  control={
+                    <Checkbox
+                      {...getFieldProps("health")}
+                      className="checkbox__p whitespace-nowrap"
+                      sx={{ fontSize: 10 }}
+                    />
+                  }
+                  label="Click here to make the recipe healthier"
                 />
               </Grid>
               <Grid item xs={4}>
                 <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
+                  control={<Checkbox {...getFieldProps("taste")} />}
+                  label="Click here to make the recipe tastier"
                 />
               </Grid>
               <Grid item xs={4}>
                 <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
+                  control={<Checkbox {...getFieldProps("cost")} />}
+                  label="Click here to make the recipe more cost effective"
                 />
               </Grid>
               <Grid item xs={4}>
                 <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
+                  control={<Checkbox {...getFieldProps("sides")} />}
+                  label="Click here for a suggestion on sides"
                 />
               </Grid>
               <Grid item xs={4}>
                 <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
+                  control={<Checkbox {...getFieldProps("dessert")} />}
+                  label="Click here for a dessert suggestion"
                 />
               </Grid>
             </Grid>

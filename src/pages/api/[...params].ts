@@ -1,5 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "1mb",
+    },
+    externalResolver: true,
+  },
+};
 export default function Handler(req: NextApiRequest, res: NextApiResponse) {
   res.writeHead(200, {
     "Content-Type": "application/json",

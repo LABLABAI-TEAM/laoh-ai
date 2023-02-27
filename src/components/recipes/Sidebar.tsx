@@ -16,6 +16,7 @@ import {
   Settings,
 } from "@mui/icons-material";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 type SidebarLayoutType = {
   onRoute?: boolean;
@@ -35,9 +36,11 @@ const SidebarLayout = ({ onRoute, handleTabClick }: SidebarLayoutType) => {
         alignItems="center"
         pb={"200px"}
       >
-        <Box width="150px" height="100px" flex="1">
-          <img src="/logo.png" className="w-full h-full" />
-        </Box>
+        <Link href={"/"}>
+          <Box width="150px" height="100px" flex="1">
+            <img src="/logo.png" className="w-full h-full" />
+          </Box>
+        </Link>
         <div className="flex-col justify-center pt-10 space-y-20">
           <IconItem
             handleTabClick={() => handleTabClick("collections")}

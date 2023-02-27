@@ -78,18 +78,22 @@ const AskingForMealForm = () => {
                   name="store"
                 />
               </Grid>
-              <Grid item xs={12} sm={4} md={6} lg={4}>
-                <AppCheckbox
-                  control={<Checkbox {...getFieldProps("people")} />}
-                  label="People to Feed"
-                />
-              </Grid>
-              <Grid item xs={12} sm={4} md={6} lg={4}>
-                <AppFormField
-                  name="peopleNumber"
-                  placeholder="People's Number"
-                />
-              </Grid>
+              <Box
+                sx={{ display: "flex", alignItems: "center", width: "100%" }}
+              >
+                <Grid item xs={12} sm={4} md={6} lg={4}>
+                  <AppCheckbox
+                    control={<Checkbox {...getFieldProps("people")} />}
+                    label="People to Feed"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={4} md={6} lg={4}>
+                  <AppFormField
+                    name="peopleNumber"
+                    placeholder="People's Number"
+                  />
+                </Grid>
+              </Box>
             </Grid>
             {/*  */}
             <Grid
@@ -107,6 +111,7 @@ const AskingForMealForm = () => {
                       {...getFieldProps("health")}
                       className="checkbox__p whitespace-nowrap"
                       sx={{ fontSize: 10 }}
+                      color="success"
                     />
                   }
                   label="Click here to make the recipe healthier"

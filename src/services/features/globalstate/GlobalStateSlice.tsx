@@ -9,6 +9,7 @@ import {
 const initialState: TGlobal = {
   onRouteClick: true,
   isResponse: false,
+  isLoading: true,
 };
 
 const globalState = createSlice({
@@ -21,13 +22,18 @@ const globalState = createSlice({
     setResponse: (state) => {
       state.isResponse = !state.isResponse;
     },
+    setLoading: (state) => {
+      state.isLoading = !state.isLoading;
+    },
   },
   extraReducers: {},
 });
 
 const { actions, reducer } = globalState;
-export const { setRouteClick } = actions;
+export const { setRouteClick, setLoading, setResponse } = actions;
 const onRouteClickS = (state: RootState) => state.global.onRouteClick;
 const isResponseS = (state: RootState) => state.global.isResponse;
-export { onRouteClickS, isResponseS };
+const isLoadingS = (state: RootState) => state.global.isLoading;
+const globalStates = (state: RootState) => state.global;
+export { onRouteClickS, isResponseS, isLoadingS, globalStates };
 export default reducer;

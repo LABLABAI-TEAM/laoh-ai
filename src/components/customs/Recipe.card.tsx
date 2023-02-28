@@ -3,6 +3,7 @@ import React from "react";
 import { Grid, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import AppImage from "./AppImage";
 
 const RecipeCard: React.FunctionComponent<RecipeElement> = ({
   link,
@@ -28,7 +29,7 @@ const RecipeCard: React.FunctionComponent<RecipeElement> = ({
           <div className="w-full flex items-center justify-center rounded-xl flex-col relative bg-[#1F1D2B] py-5 px-2 space-y-8">
             <div className="absolute -top-12 z-[999]">
               {/* <Image src={image} alt="image" height={150} width={150} /> */}
-              <img src={"/img2.png"} alt="" width={150} height={150} />
+              <AppImage src={"/img2.png"} alt="" width={150} height={150} />
             </div>
             <Typography
               variant="h6"

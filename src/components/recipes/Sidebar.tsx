@@ -17,6 +17,7 @@ import {
 } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import AppImage from "../customs/AppImage";
 
 type SidebarLayoutType = {
   onRoute?: boolean;
@@ -38,7 +39,7 @@ const SidebarLayout = ({ onRoute, handleTabClick }: SidebarLayoutType) => {
       >
         <Link href={"/"}>
           <Box width="150px" height="100px" flex="1">
-            <img src="/logo.png" className="w-full h-full" />
+            <AppImage src="/logo.png" className="w-full h-full" alt="" />
           </Box>
         </Link>
         <div className="flex-col justify-center pt-10 space-y-20">

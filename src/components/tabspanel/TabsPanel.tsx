@@ -2,7 +2,7 @@ import React from "react";
 import {} from "@mui/lab";
 import { AppBar, Tabs, Tab, Typography, Box } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled, Theme, useTheme } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import RecipeCollections from "../recipes/recipecollections/RecipeCollections";
 import { onRouteClickS } from "@/services/features/globalstate/GlobalStateSlice";
@@ -75,7 +75,7 @@ const StyledTabs = styled((props: StyledTabsProps) => (
 
 const StyledTab = styled((props: StylesTabProps) => (
   <Tab {...props} disableRipple />
-))(({ theme }) => ({
+))(({ theme }: { theme: Theme }) => ({
   textTransform: "none",
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(14),
@@ -185,7 +185,7 @@ const FullWidthTab = () => {
           {/* <StyledTab label="All Recipes" {...a11yProps(0)} />
           <StyledTab label="Healthy" {...a11yProps(1)} /> */}
           {categories.map(({ id, name }) => (
-            <StyledTab label={name} {...a11yProps(id as number)} />
+            <StyledTab label={name} {...a11yProps(id as number)} key={id} />
           ))}
         </StyledTabs>
       </AppBar>

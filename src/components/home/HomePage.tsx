@@ -5,6 +5,7 @@ import Link from "next/link";
 import MainButton from "@/hooks/Button";
 import cx from "classnames";
 import { useRouter } from "next/router";
+import AppImage from "../customs/AppImage";
 
 const HomePage = () => {
   const [windowSize, setWindowSize] = useState({
@@ -85,13 +86,13 @@ const HomePage = () => {
             </Box>
           </Grid>
           <Grid item sm={12} md={6} xl={6} position="relative" width={"100%"}>
-            <img
+            <AppImage
               src="/vector.png"
               alt=""
               className={cx("vector__one__img", `top-[${topSize}]`)}
             />
-            <img src="/vector2.png" alt="" className="vector__two__img" />
-            <img src="/image.png" className="image__header " />
+            <AppImage src="/vector2.png" alt="" className="vector__two__img" />
+            <AppImage src="/image.png" className="image__header " alt="" />
           </Grid>
         </Grid>
       </Container>

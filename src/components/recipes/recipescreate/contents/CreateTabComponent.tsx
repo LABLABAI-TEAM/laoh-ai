@@ -8,7 +8,7 @@ import {
   TabPanelProps,
   TCategory,
 } from "@/types/types";
-import { makeStyles, styled, useTheme } from "@mui/material/styles";
+import { makeStyles, styled, Theme, useTheme } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import { recipeCreateData } from "@/utils/data/recipes";
 import RecipesCreateOrder from "./children/recipescreateorder/RecipesCreateOrder";
@@ -61,7 +61,7 @@ const StyledTabs = styled((props: StyledTabsProps) => (
 
 const StyledTab = styled((props: StylesTabProps) => (
   <Tab {...props} disableRipple />
-))(({ theme }) => ({
+))(({ theme }: { theme: Theme }) => ({
   textTransform: "none",
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(14),

@@ -4,6 +4,7 @@ import {} from "@mui/lab";
 import {} from "next/app";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import AppImage from "../customs/AppImage";
 
 const Header = () => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const Header = () => {
       <Container maxWidth="xl">
         <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
           <Link href="/">
-            <img
+            <AppImage
               src="/logo.png"
               alt="logo"
               style={{ width: "100px", height: "100px" }}

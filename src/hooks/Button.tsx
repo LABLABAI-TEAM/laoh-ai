@@ -27,4 +27,5 @@ const MainButton = forwardRef<
     </Button>
   );
 });
+MainButton.displayName = "MainButton";
 export default MainButton;

@@ -1,3 +1,4 @@
+import AppImage from "@/components/customs/AppImage";
 import { isResponseS } from "@/services/features/globalstate/GlobalStateSlice";
 import { Typography, Box } from "@mui/material";
 import { log } from "console";
@@ -13,11 +14,11 @@ const NoResponseComponent = () => (
         p: 2,
       }}
     >
-      <img src="/chef.png" alt="" className=" top-0 w-20 h-20" />
+      <AppImage src="/chef.png" alt="" className=" top-0 w-20 h-20" />
     </Box>
 
     <Box position="relative" display="inline-flex" width="100%" height="500px">
-      <img
+      <AppImage
         src="/rectangle.png"
         alt="image"
         className="w-full h-full max-w-full rounded-md"

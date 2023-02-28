@@ -58,4 +58,5 @@ const AppTextInput = forwardRef<
     );
   }
 );
+AppTextInput.displayName = "TextInput";
 export default AppTextInput;

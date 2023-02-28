@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import { ColorButton } from "../customs/ButtonCO";
 import Header from "../navbar/Header";
+import Image from "next/image";
+import AppImage from "../customs/AppImage";
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({
   children,
@@ -22,8 +24,8 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
           height={"100vh"}
           alignContent="center"
         >
-          <img src="/vector4.png" className="vector__three__img" />
-          <img src="/vector3.png" className="vector__three__img" />
+          <AppImage src="/vector4.png" className="vector__three__img" alt="" />
+          <AppImage src="/vector3.png" className="vector__three__img" alt="" />
           <Box
             width={"500px"}
             p={10}

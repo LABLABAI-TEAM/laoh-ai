@@ -30,6 +30,12 @@ import createEmotionCache from "../utility/createEmotionCache";
 import { lightThemeOptions } from "../styles/themes/lightThemeOptions";
 import { store } from "@/services/app/rootReducer";
 import persistStore from "redux-persist/lib/persistStore";
+import { SessionOptions } from "next-auth";
+import {
+  SessionContextValue,
+  SessionProvider,
+  SessionProviderProps,
+} from "next-auth/react";
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
@@ -43,21 +49,23 @@ let persistor = persistStore(store);
 const App: React.FunctionComponent<MyAppProps> = ({
   Component,
   emotionCache = clientSideEmotionCache,
-  pageProps,
+  pageProps: { session, ...pageProps },
 }) => {
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        {/* <ChakraBaseProvider theme={theme}> */}
-        <Provider store={store}>
-          {/* <PersistGate loading={null} persistor={persistor}> */}
-          <Component {...pageProps} />
-          {/* </PersistGate> */}
-        </Provider>
-        {/* </ChakraBaseProvider> */}
-      </ThemeProvider>
-    </CacheProvider>
+    <SessionProvider session={session}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          {/* <ChakraBaseProvider theme={theme}> */}
+          <Provider store={store}>
+            {/* <PersistGate loading={null} persistor={persistor}> */}
+            <Component {...pageProps} />
+            {/* </PersistGate> */}
+          </Provider>
+          {/* </ChakraBaseProvider> */}
+        </ThemeProvider>
+      </CacheProvider>
+    </SessionProvider>
   );
 };
 

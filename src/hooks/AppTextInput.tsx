@@ -29,7 +29,7 @@ const AppTextInput = forwardRef<
       message,
       handleEvent,
       variant,
-      onChange,
+      onChange, 
       placeholder,
       name,
       error,

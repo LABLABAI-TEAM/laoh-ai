@@ -9,6 +9,7 @@ import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
+// @ts-ignore
 import chakraTheme from "@chakra-ui/theme";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";

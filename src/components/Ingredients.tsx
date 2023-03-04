@@ -34,11 +34,11 @@ function Ingredients({ showOutput }: { showOutput: (a: any) => void }) {
 
   const gaEventTracker = useAnalyticsEventTracker("Recipes By AI");
 
-  const formik = useFormik<FormValues>({
+  const formik = useFormik({
     initialValues: {
       ingredients: [""],
     },
-    onSubmit: function (formData) {
+    onSubmit: function (formData: {}) {
       gaEventTracker("Creative Cooking");
 
       setSubmitting(true);
@@ -82,9 +82,9 @@ function Ingredients({ showOutput }: { showOutput: (a: any) => void }) {
       >
         <FieldArray
           name="ingredients"
-          render={(arrayHelpers) => (
+          render={(arrayHelpers: any) => (
             <div>
-              {formik.values.ingredients.map((ingredient, index) => (
+              {formik.values.ingredients.map((ingredient:string, index: number) => (
                 <Grid
                   key={index}
                   container

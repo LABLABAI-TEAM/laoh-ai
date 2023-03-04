@@ -5,6 +5,7 @@ import {
   ThunkDispatch,
   Store,
   configureStore,
+  // @ts-ignore
 } from "@reduxjs/toolkit";
 
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
@@ -35,4 +36,3 @@ export const store = configureStore({
 export const useAppDispatch = () => useDispatch<AppThunkDispatch>();
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
- 

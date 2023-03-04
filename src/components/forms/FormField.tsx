@@ -11,7 +11,7 @@ const AppFormField: ComponentsBaseProps = ({
   ...otherProps
 }) => {
   const { setFieldTouched, errors, touched, handleChange } =
-    useFormikContext<UserSignup>();
+    useFormikContext();
   const safeName = name ?? "";
   return (
     <>

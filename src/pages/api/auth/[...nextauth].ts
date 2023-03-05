@@ -9,11 +9,11 @@ const authOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
   ],
-  database: process.env.DB_URL,
+  // database: process.env.DB_URL,
   // session: { jwt: true },
-  jwt: {
-    secret: process.env.JWT_SECRET,
-  },
+  // jwt: {
+  //   secret: process.env.JWT_SECRET,
+  // },
 };
 
 export default NextAuth(authOptions);

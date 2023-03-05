@@ -7,6 +7,9 @@ const Login = () => {
   const { data: session, status } = useSession();
   return (
     <>
+      <div className="progress">
+        <progress value="0" max="100" dir="ltr"></progress>
+      </div>
       <AuthLayout
         redirect={{
           desc: "Don't have an account?.",

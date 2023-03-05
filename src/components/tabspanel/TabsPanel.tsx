@@ -25,6 +25,7 @@ interface StyledTabsProps {
 
 interface StylesTabProps {
   label: string;
+  selectedColor?: string;
 }
 const TabPanel: React.FC<TabPanelProps> = ({
   children,
@@ -75,7 +76,7 @@ const StyledTabs = styled((props: StyledTabsProps) => (
 
 const StyledTab = styled((props: StylesTabProps) => (
   <Tab {...props} disableRipple />
-))(({ theme, sx }) => ({
+))(({ theme, sx, selectedColor }) => ({
   textTransform: "none",
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(9),
@@ -83,8 +84,8 @@ const StyledTab = styled((props: StylesTabProps) => (
   "&:hover": {
     color: "#EB966A",
   },
-  "&:selected": {
-    color: theme.palette.success,
+  "&:select": {
+    color: selectedColor || theme.palette.success,
   },
 }));
 
@@ -184,8 +185,13 @@ const FullWidthTab = () => {
         >
           {/* <StyledTab label="All Recipes" {...a11yProps(0)} />
           <StyledTab label="Healthy" {...a11yProps(1)} /> */}
-          {categories.map(({ id, name }) => (
-            <StyledTab label={name} {...a11yProps(id as number)} key={id} />
+          {categories.map(({ id, name, color }) => (
+            <StyledTab
+              label={name}
+              {...a11yProps(id as number)}
+              key={id}
+              selectedColor={color}
+            />
           ))}
         </StyledTabs>
       </AppBar>

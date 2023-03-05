@@ -91,7 +91,7 @@ const GlobalInitialState = z.object({
 
 type TGlobal = z.infer<typeof GlobalInitialState>;
 
-type TCategory = { id: number | string; name: string };
+type TCategory = { id: number | string; name: string; color?: string };
 
 interface TRecipes {
   handleSort?: (event: React.ChangeEvent<HTMLInputElement>) => void;

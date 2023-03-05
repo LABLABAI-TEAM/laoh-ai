@@ -338,15 +338,17 @@ const recipesData = [
 ];
 
 const categories: TCategory[] = [
-  { id: uuid(), name: "Burger" },
-  { id: uuid(), name: "food inclined" },
+  { id: uuid(), name: "Burger", color: "#FF0000" },
+  { id: uuid(), name: "food inclined", color: "#FF0000" },
   {
     id: uuid(),
     name: "Richer",
+    color: "#FF0000",
   },
   {
     id: uuid(),
     name: "Stronger",
+    color: "#FF0000",
   },
 ];
 

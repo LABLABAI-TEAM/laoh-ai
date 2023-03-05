@@ -5,7 +5,6 @@ import {
   ThunkDispatch,
   Store,
   configureStore,
-  // @ts-ignore
 } from "@reduxjs/toolkit";
 
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";

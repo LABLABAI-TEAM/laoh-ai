@@ -47,7 +47,7 @@ function Recipes({ showOutput }: { showOutput: (a: any) => void }) {
       dessert: false,
       sides: false,
     },
-    onSubmit: function (formData: {}) {
+    onSubmit: function (formData) {
       gaEventTracker("Recipe Finder");
 
       setSubmitting(true);

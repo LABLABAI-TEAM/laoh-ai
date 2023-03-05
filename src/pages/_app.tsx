@@ -9,23 +9,21 @@ import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
-// @ts-ignore
-import chakraTheme from "@chakra-ui/theme";
+// import chakraTheme from "@chakra-ui/theme";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
-const { Button } = chakraTheme.components;
+// const { Button } = chakraTheme.components;
 
 const theme = extendBaseTheme({
   components: {
-    Button,
+    // Button,
   },
 });
-/*
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css"; */
+import "@fontsource/roboto/700.css"; 
 
 import createEmotionCache from "../utility/createEmotionCache";
 import { lightThemeOptions } from "../styles/themes/lightThemeOptions";

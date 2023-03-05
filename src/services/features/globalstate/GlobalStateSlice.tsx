@@ -17,7 +17,7 @@ const globalState = createSlice({
   initialState,
   name: "global",
   reducers: {
-    setRouteClick: (state: TGlobal
+    setRouteClick: (state
       ) => {
       state.onRouteClick = !state.onRouteClick;
     },

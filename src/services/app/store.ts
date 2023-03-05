@@ -4,7 +4,6 @@ import {
   Action,
   CombinedState,
   combineReducers,
-  // @ts-ignore
 } from "@reduxjs/toolkit";
 import {Middleware} from  "redux"
 import { ThunkAction, ThunkActionDispatch } from "redux-thunk";

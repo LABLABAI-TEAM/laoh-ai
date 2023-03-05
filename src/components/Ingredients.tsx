@@ -34,7 +34,7 @@ function Ingredients({ showOutput }: { showOutput: (a: any) => void }) {
 
   const gaEventTracker = useAnalyticsEventTracker("Recipes By AI");
 
-  const formik = useFormik({
+  const formik = useFormik<FormValues>({
     initialValues: {
       ingredients: [""],
     },

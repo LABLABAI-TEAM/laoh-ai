@@ -117,6 +117,12 @@ interface StyledTabsProps {
 interface StylesTabProps {
   label: string;
 }
+
+type UserModelType<T> = {
+  usernames?: T;
+  email: T;
+  password: T;
+};
 export type {
   ComponentsBaseProps,
   AuthLayoutProps,
@@ -129,4 +135,5 @@ export type {
   TabPanelProps,
   StyledTabsProps,
   StylesTabProps,
+  UserModelType,
 };

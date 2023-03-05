@@ -15,17 +15,16 @@ const RegisterFormComponent = () => {
     password: Yup.string().required().label("Password").min(4),
     email: Yup.string().required().label("Email").email(),
   });
-  const { initialValues, handleSubmit, isSubmitting, submitForm } =
-    useFormik({
-      initialValues: {
-        usernames: "",
-        password: "",
-        email: "",
-      },
-      onSubmit: ({ email }: {email: string}) => {
-        console.log(email);
-      },
-    });
+  const { initialValues, handleSubmit, isSubmitting, submitForm } = useFormik({
+    initialValues: {
+      usernames: "",
+      password: "",
+      email: "",
+    },
+    onSubmit: ({ email }) => {
+      console.log(email);
+    },
+  });
   return (
     <>
       <AppForm

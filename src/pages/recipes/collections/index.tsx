@@ -16,7 +16,7 @@ const RecipeCollectionCP = () => {
     if (!session) {
       return signIn();
     } else {
-      return dispatch(setLoading);
+      return dispatch(setLoading());
     }
   };
   React.useEffect(() => {
@@ -25,12 +25,13 @@ const RecipeCollectionCP = () => {
 
   const onRoute = useSelector(onRouteClickS);
   const { isLoading } = useSelector(globalStates);
+  console.log("isLoading", isLoading);
+
   return (
     <>
       <RecipLayout onRouteClick={onRoute}>
         <RecipeComponent />
       </RecipLayout>
-      {isLoading && <p>loading</p>}
     </>
   );
 };

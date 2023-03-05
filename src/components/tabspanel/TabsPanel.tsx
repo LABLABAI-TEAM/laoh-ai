@@ -75,16 +75,16 @@ const StyledTabs = styled((props: StyledTabsProps) => (
 
 const StyledTab = styled((props: StylesTabProps) => (
   <Tab {...props} disableRipple />
-))(({ theme }: { theme: Theme }) => ({
+))(({ theme, sx }) => ({
   textTransform: "none",
   fontWeight: theme.typography.fontWeightRegular,
-  fontSize: theme.typography.pxToRem(14),
-  color: theme.palette.grey[400],
+  fontSize: theme.typography.pxToRem(9),
+  color: theme.palette.grey[200],
   "&:hover": {
     color: "#EB966A",
   },
   "&:selected": {
-    color: "#EB966A",
+    color: theme.palette.success,
   },
 }));
 

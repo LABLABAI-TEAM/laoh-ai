@@ -25,7 +25,7 @@ const RecipeLayout: ComponentsBaseProps = ({ children, onRouteClick }) => {
               handleTabClick={handleTabClick}
             />
           </div>
-          <div className="max-w-[95%] w-full">{children}</div>
+          <div className="max-w-[90%] w-full">{children}</div>
         </div>
       </div>
     </>

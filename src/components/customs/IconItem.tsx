@@ -17,7 +17,7 @@ const IconItem: React.FC<{
   const router = useRouter();
   return (
     <>
-      <div className="group w-20 h-20">
+      <div className="group  w-12 h-12 xl:w-16 xl:h-16 ">
         <Wrapper
           className={cx(router.asPath.includes(route!) ? "bg-[#252836]" : "")}
         >

@@ -25,7 +25,7 @@ const RecipeCollections: React.FC<TRecipes> = ({
           <div className="w-full pr-80  max-h-[800px] overflow-y-scroll scrollbar-none ">
             <Grid
               container
-              spacing={{ xs: 2, md: 10 }}
+              spacing={{ xs: 2, md: 4 }}
               columns={{ xs: 4, sm: 8, md: 12 }}
               sx={{ my: "10rem", pt: "3rem" }}
             >

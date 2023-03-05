@@ -5,7 +5,7 @@ import Header from "./Header";
 const RecipeComponent = () => {
   return (
     <>
-      <div>
+      <div className="max-w-nine">
         <Header />
         <FullWidthTab />
       </div>

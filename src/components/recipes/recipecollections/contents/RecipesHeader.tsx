@@ -86,7 +86,7 @@ const RecipesHeader: React.FC<TRecipes> = ({
             displayEmpty
             renderValue={(selected) => {
               if (selected.length === 0) {
-                return <em>Trending</em>;
+                return <em className="text__element">Trending</em>;
               }
               return selected.join(", ");
             }}

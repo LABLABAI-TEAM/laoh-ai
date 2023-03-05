@@ -15,7 +15,7 @@
   @apply text-white text-lg md:text-lg;
 }
 .text__element__xs {
-  @apply text-xs text-white;
+  @apply text-small tracking-wider text-white;
 }
 
 .text__large {

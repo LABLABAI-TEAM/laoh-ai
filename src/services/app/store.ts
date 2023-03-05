@@ -5,6 +5,7 @@ import {
   CombinedState,
   combineReducers,
 } from "@reduxjs/toolkit";
+import {Middleware} from  "redux"
 import { ThunkAction, ThunkActionDispatch } from "redux-thunk";
 import logger from "redux-logger";
 import {
@@ -34,7 +35,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({
   //   reducer: persistedReducer,
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware: ({})=> Middleware[]) =>
     getDefaultMiddleware({ serializableCheck: true }).concat(logger),
   devTools: process.env.NODE_ENV !== "production",
 });

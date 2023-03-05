@@ -7,7 +7,7 @@ import { connectDB } from "@/utils/config/dbConnect";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
-  next: NextApiHandler
+  next: () => void
 ) {
   const { method } = req;
   await connectDB();

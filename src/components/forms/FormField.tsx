@@ -10,7 +10,7 @@ const AppFormField: ComponentsBaseProps = ({
   placeholder,
   ...otherProps
 }) => {
-  const { setFieldTouched, errors, touched, handleChange } =
+  const { setFieldTouched, errors, touched, handleChange, values } =
     useFormikContext();
   const safeName = name ?? "";
   return (
@@ -21,6 +21,8 @@ const AppFormField: ComponentsBaseProps = ({
         onBlur={() => setFieldTouched(name!)}
         placeholder={placeholder}
         name={name}
+        // @ts-ignore
+        value={values[name]}
         // @ts-ignore
         error={Boolean(touched[safeName]) && Boolean(errors[safeName])}
         // @ts-ignore

@@ -38,7 +38,7 @@ const SubmitButton = forwardRef<
         className={cx(
           className,
           "w-full py-3 ",
-          !isSubmitting && "cursor-not-allowed"
+          isSubmitting && "cursor-not-allowed"
         )}
         variant={variant}
         onClick={handleEvent}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "wilson",
+    "description": "my description",
+    "id": 1,
+    "type": ["Grass"],
+    "hp": 42,
+    "attack": 49,
+    "defense": 49,
+    "special_attack": 49,
+    "special_defense": 49,
+    "speed": 45
+  },
+  {
+    "name": "promise",
+    "description": "my next ",
+    "id": 2,
+    "type": ["Grass", "meeat"],
+    "hp": 42,
+    "attack": 49,
+    "defense": 49,
+    "special_attack": 49,
+    "special_defense": 49,
+    "speed": 45
+  },
+  {
+    "name": "james",
+    "description": "my third",
+    "id": 3,
+    "type": ["Grass", "paint", "meeat"],
+    "hp": 42,
+    "attack": 49,
+    "defense": 49,
+    "special_attack": 49,
+    "special_defense": 49,
+    "speed": 45
+  }
+]

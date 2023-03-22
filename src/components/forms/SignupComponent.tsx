@@ -9,6 +9,7 @@ import { SubmitButton } from "@/hooks";
 import cx from "classnames";
 import { UserSignup } from "@/types/types";
 import Swal from "sweetalert2";
+import { postApiRequest } from "@/utils/api/api";
 
 const RegisterFormComponent = () => {
   const ValidationSchema = Yup.object().shape({
@@ -36,6 +37,7 @@ const RegisterFormComponent = () => {
           confirmButtonText: "Undo",
         });
         // setSubmitting((isPrev) => !isPrev);
+        postApiRequest("signup", values);
         setTimeout(() => {
           console.log("kdkdkd");
           resetForm();

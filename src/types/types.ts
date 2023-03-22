@@ -123,6 +123,23 @@ type UserModelType<T> = {
   email: T;
   password: T;
 };
+interface TPokemon {
+  name: string;
+  description: string;
+  id: number;
+  type: string[];
+  hp: string;
+  attack: number;
+  defense: number;
+  special_attack: number;
+  special_defense: number;
+  speed: number;
+}
+
+interface IPOKE {
+  search: string;
+  startupPokemon: TPokemon[];
+}
 export type {
   ComponentsBaseProps,
   AuthLayoutProps,
@@ -136,4 +153,6 @@ export type {
   StyledTabsProps,
   StylesTabProps,
   UserModelType,
+  TPokemon,
+  IPOKE,
 };

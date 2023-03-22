@@ -20,7 +20,7 @@ const SearchInput = () => {
   const mainData = useAppSelector(pokeData);
   const startupPOKE = useAppSelector(startupPokemon);
   React.useEffect(() => {
-    pokemonapi.endpoints.search.initiate(search);
+    pokemonapi.endpoints.search.initiate(searchValue);
   }, [dispatch, searchValue]);
 
   return (

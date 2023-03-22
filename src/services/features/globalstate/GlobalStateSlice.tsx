@@ -4,7 +4,6 @@ import {
   createSelector,
   createSlice,
   createAsyncThunk,
-  // @ts-ignore
 } from "@reduxjs/toolkit";
 
 const initialState: TGlobal = {
@@ -17,11 +16,10 @@ const globalState = createSlice({
   initialState,
   name: "global",
   reducers: {
-    setRouteClick: (state
-      ) => {
+    setRouteClick: (state) => {
       state.onRouteClick = !state.onRouteClick;
     },
-    setResponse: (state:TGlobal) => {
+    setResponse: (state: TGlobal) => {
       state.isResponse = !state.isResponse;
     },
     setLoading: (state: TGlobal) => {

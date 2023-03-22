@@ -10,10 +10,13 @@ import {
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import GlobalReducer from "../features/globalstate/GlobalStateSlice";
 import PokemonReducer from "../features/pokemon/PokemonStateSlice";
-
+import PokemonApiReducer, {
+  pokemonapi,
+} from "../features/pokemonapi/PokemonApi";
 const rootReducer = combineReducers({
   global: GlobalReducer,
   pokeslice: PokemonReducer,
+  pokemonapi: PokemonApiReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
